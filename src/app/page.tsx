@@ -1,5 +1,6 @@
 import { Header } from "@/components/header/Header";
 import { Hero } from "@/components/hero/Hero";
+import { Work } from "@/components/work/Work";
 import { DownloadCVButton } from "@/components/header/DownloadCVButton";
 
 export default function Home() {
@@ -8,9 +9,8 @@ export default function Home() {
             <Header/>
             <DownloadCVButton />
             <main>
-                <Hero/>
-                <Hero/>
-                <Hero/>
+                <Hero />
+                <Work />
             </main>
             <footer className={"flex gap-6 flex-wrap items-center justify-center py-8"}>
             </footer>
