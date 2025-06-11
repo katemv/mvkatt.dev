@@ -30,9 +30,9 @@ export const Work = () => {
                     tech={"React, Next & Node, Express"}
                     location={"London, UK"}
                     description={[
-                        "Developed and maintained user-facing features for a financial platform using React and Next.js, enabling retail investors to access IPOs and fundraises at institutional terms.",
-                        "Delivered a high-quality product under tight deadlines, achieving a 95% customer satisfaction rate through rigorous unit testing, integration testing, and peer reviews.",
-                        "Designed and implemented an internal UI component library, adopted by 3+ teams, enhancing developer productivity and ensuring visual consistency across products.",
+                        "Developed and maintained features for a financial platform, enabling retail investors to access IPOs and fundraises at institutional terms.",
+                        "Delivered a high-quality product under tight deadlines, achieving a 95% customer satisfaction rate through rigorous testing and peer reviews.",
+                        "Designed and implemented an internal UI component library, adopted by 3+ teams, enhancing developer productivity and visual consistency across products.",
                     ]}
                 />
 
