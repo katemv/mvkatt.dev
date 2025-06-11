@@ -14,6 +14,12 @@ export const Work = () => {
                     title={"Fullstack Developer"}
                     tech={"React, React Native & Supabase"}
                     location={"Calgary, AB"}
+                    description={[
+                        "Collaborated on a React-based web admin tool and React Native mobile application for a scuba diving platform, enabling users to explore diving spots, upload photos, and advertise partner-led trips.",
+                        "Improved code quality, maintainability, and performance by refactoring complex codebase sections.",
+                        "Fixed critical bugs in the Supabase-integrated admin tool, enhancing functionality for managing user-generated content and partner trip listings.",
+                        "Implemented new features for the admin interface, streamlining content moderation and improving user experience for platform administrators.",
+                    ]}
                 />
 
                 <Experience
@@ -23,6 +29,11 @@ export const Work = () => {
                     title={"Fullstack Developer"}
                     tech={"React, Next & Node, Express"}
                     location={"London, UK"}
+                    description={[
+                        "Developed and maintained user-facing features for a financial platform using React and Next.js, enabling retail investors to access IPOs and fundraises at institutional terms.",
+                        "Delivered a high-quality product under tight deadlines, achieving a 95% customer satisfaction rate through rigorous unit testing, integration testing, and peer reviews.",
+                        "Designed and implemented an internal UI component library, adopted by 3+ teams, enhancing developer productivity and ensuring visual consistency across products.",
+                    ]}
                 />
 
                 <Experience
@@ -32,6 +43,11 @@ export const Work = () => {
                     title={"Frontend Developer"}
                     tech={"React, React Native & Firebase"}
                     location={"Remote"}
+                    description={[
+                        "Built a React Native mobile application from scratch for a personal CRM, streamlining business relationship management for 10,000+ users.",
+                        "Spearheaded stakeholder communication, gathering requirements and planning development sprints, resulting in on-time delivery of key milestones.",
+                        "Mentored 3 junior developers through code reviews and pair programming, improving team code quality and reducing bugs by 20%.",
+                    ]}
                 />
 
                 <Experience
@@ -41,6 +57,11 @@ export const Work = () => {
                     title={"Frontend Developer"}
                     tech={"React, TypeScript"}
                     location={"Remote"}
+                    description={[
+                        "Contributed to a SaaS platform built with React and Next.js, optimizing document handling processes for 50+ business clients.",
+                        "Implemented role-based access controls, enhancing security and user experience for multi-tenant environments.",
+                        "Collaborated with the design team using Figma to bring design concepts to life in a pixel-perfect manner.",
+                    ]}
                 />
 
                 <Experience
@@ -50,6 +71,11 @@ export const Work = () => {
                     title={"Frontend Developer"}
                     tech={"React, TypeScript"}
                     location={"Remote"}
+                    description={[
+                        "Developed an internal document management system and dashboard using Material UI, improving operational efficiency for 20+ staff members.",
+                        "Gathered business requirements directly from management, ensuring alignment between technical solutions and business needs.",
+                        "Created interactive prototypes to validate requirements, accelerating project approval by 10%.",
+                    ]}
                 />
             </div>
             <div className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"}>
