@@ -1,13 +1,13 @@
 import { FC } from "react";
-import ProfileCard from "@/components/profileCard/ProfileCard";
-import { ExternalLink } from "@/components/ExternalLink";
 import { Github } from "lucide-react";
 
+import { ExternalLink } from "@/components/ExternalLink";
+import { AnchorHeading } from "@/components/AnchorHeading";
 
 export const Skills: FC = () => {
     return (
-        <div className={"grid grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-10"}>
-            <h1 className={"col-span-3 text-7xl font-mono font-semibold"}>{"Skills"}</h1>
+        <section className={"grid grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-10"}>
+            <AnchorHeading id="skills" className={"col-span-3"} />
             <div className={"grid grid-cols-1 md:grid-cols-2 gap-6 col-span-2"}>
                 {/* Front-end */}
                 <div className={"bg-gray-100 rounded-3xl p-6 border border-gray-200 col-span-2"}>
@@ -65,17 +65,6 @@ export const Skills: FC = () => {
                     </p>
                 </div>
             </div>
-            <div className={"flex flex-col gap-6 relative"}>
-                <ProfileCard
-                    name={"Kateryna K."}
-                    title={"Full-stack Developer"}
-                    handle={"mvkatt"}
-                    showUserInfo={true}
-                    enableTilt={true}
-                    className={"relative z-10"}
-                />
-                <div className={"h-[400px] aspect-12/16 border border-white/15 rounded-4xl absolute bottom-30 right-0"}/>
-            </div>
-        </div>
+        </section>
     );
 };

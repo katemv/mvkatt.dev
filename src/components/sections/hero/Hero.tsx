@@ -1,10 +1,10 @@
 import { cn } from "@/utils/tailwind";
 import { Github, Linkedin, Send } from "lucide-react";
-import { SocialLink } from "@/components/hero/SocialLink";
+import { SocialLink } from "@/components/sections/hero/SocialLink";
 
 export const Hero = () => {
     return (
-        <section className="min-h-screen pt-16">
+        <section className="min-h-screen pt-16 flex items-center justify-center">
             <div className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16 pt-36"}>
                 <div className={"grid grid-cols-1 lg:grid-cols-3 gap-8 items-center"}>
                     <h1 className={cn(
@@ -27,7 +27,7 @@ export const Hero = () => {
                             "bg-white text-black w-12 h-12 rounded-full flex items-center justify-center",
                             "hover:bg-gray-100 transition-colors"
                         )}>
-                            <span className={"text-xl transition-transform duration-300 group-hover:rotate-45"}>
+                            <span className={"text-xl transition-transform duration-300 rotate-45 group-hover:rotate-135"}>
                                 {"↗"}
                             </span>
                         </div>

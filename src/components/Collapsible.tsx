@@ -42,7 +42,7 @@ export const Collapsible: FC<CollapsibleProps> = ({
             <div
                 className={cn(
                     "overflow-hidden transition-all duration-500 ease-in-out",
-                    isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+                    isExpanded ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0",
                     contentClassName
                 )}
             >

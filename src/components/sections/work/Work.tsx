@@ -1,12 +1,13 @@
-import { Experience } from "@/components/work/Experience";
+import { Experience } from "@/components/sections/work/Experience";
+import { AnchorHeading } from "@/components/AnchorHeading";
 
 export const Work = () => {
     return (
-        <section className={"text-white min-h-screen"}>
+        <section className={"text-white min-h-screen flex justify-center items-center w-full flex-col"}>
             <div className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"}>
-                <h1 className={"text-7xl text-right mb-8 font-mono font-semibold"}>{"Work"}</h1>
+                <AnchorHeading id={"work"} className="text-right" />
             </div>
-            <div>
+            <div className={"w-full"}>
                 <Experience
                     startDate={"May 2025"}
                     endDate={"Present"}

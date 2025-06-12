@@ -1,8 +1,9 @@
 import { Header } from "@/components/header/Header";
-import { Hero } from "@/components/hero/Hero";
-import { Work } from "@/components/work/Work";
+import { Hero } from "@/components/sections/hero/Hero";
+import { Work } from "@/components/sections/work/Work";
 import { DownloadCVButton } from "@/components/header/DownloadCVButton";
-import { Skills } from "@/components/skills/Skills";
+import { Skills } from "@/components/sections/skills/Skills";
+import { About } from "@/components/sections/about/About";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
             <DownloadCVButton />
             <main>
                 <Hero />
+                <About />
                 <Work />
                 <Skills />
             </main>

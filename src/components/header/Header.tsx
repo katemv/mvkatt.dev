@@ -1,6 +1,14 @@
 import { cn } from "@/utils/tailwind";
 import { Menu } from "lucide-react";
 
+const navItems = [
+    "about",
+    "work",
+    "skills",
+    "projects",
+    "contact"
+];
+
 export const Header = () => {
     return (
         <header className={"fixed top-0 left-0 right-0 z-50 backdrop-blur-sm"}>
@@ -13,24 +21,15 @@ export const Header = () => {
                 </div>
 
                 <nav className={"hidden md:flex items-center space-x-8"}>
-                    <a 
-                        href={"#about"}
-                        className={"text-gray-300 hover:text-white transition-colors duration-200"}
-                    >
-                        {"About"}
-                    </a>
-                    <a 
-                        href={"#projects"} 
-                        className={"text-gray-300 hover:text-white transition-colors duration-200"}
-                    >
-                        {"Projects"}
-                    </a>
-                    <a 
-                        href={"#contact"}
-                        className={"text-gray-300 hover:text-white transition-colors duration-200"}
-                    >
-                        {"Contact"}
-                    </a>
+                    {navItems.map((item) => (
+                        <a
+                            key={item}
+                            href={"#" + item}
+                            className={"text-gray-300 hover:text-white transition-colors duration-200 capitalize"}
+                        >
+                            {item}
+                        </a>
+                    ))}
                 </nav>
 
                 <div className="w-32 hidden md:block" />
