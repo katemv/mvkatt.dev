@@ -1,6 +1,7 @@
 import { cn } from "@/utils/tailwind";
 import { Github, Linkedin, Send } from "lucide-react";
 import { SocialLink } from "@/components/sections/hero/SocialLink";
+import DecryptedText from "@/components/animations/DecryptedText/DecryptedText";
 
 export const Hero = () => {
     return (
@@ -11,16 +12,26 @@ export const Hero = () => {
                         "text-6xl sm:text-7xl lg:text-9xl font-mono col-span-2 text-white leading-none",
                         "font-semibold")}
                     >
-                        {"Full-stack"}
+                        <DecryptedText
+                            text={"Full-stack"}
+                            animateOn="view"
+                            revealDirection="start"
+                            speed={80}
+                            maxIterations={20}
+                            sequential={true}
+                        />
                     </h1>
 
-                    <div className={cn(
-                        "flex items-center justify-end gap-2 cursor-pointer group hover:gap-4",
-                        "transition-all duration-300"
-                    )}>
+                    <a
+                        href="#about"
+                        className={cn(
+                            "flex items-center justify-end gap-2 cursor-pointer group hover:gap-4",
+                            "transition-all duration-300"
+                        )}
+                    >
                         <div className={"bg-white text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors"}>
                             <span className={"font-medium"}>
-                                {"Projects"}
+                                {"Discover my story"}
                             </span>
                         </div>
                         <div className={cn(
@@ -31,7 +42,7 @@ export const Hero = () => {
                                 {"↗"}
                             </span>
                         </div>
-                    </div>
+                    </a>
 
                     <p className="text-gray-400 text-lg leading-relaxed">
                         {"My goal is to "}
@@ -45,7 +56,14 @@ export const Hero = () => {
                         "text-6xl sm:text-7xl lg:text-9xl font-mono font-semibold text-white leading-none",
                         "col-span-2 text-end"
                     )}>
-                        {"Developer"}
+                        <DecryptedText
+                            text={"Developer"}
+                            animateOn="view"
+                            revealDirection="start"
+                            speed={80}
+                            maxIterations={20}
+                            sequential={true}
+                        />
                     </h2>
                     <div className={"flex flex-wrap gap-4 col-span-3 items-center justify-center mt-16"}>
                         <SocialLink icon={Github} label="Github" />
