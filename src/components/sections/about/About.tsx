@@ -3,7 +3,7 @@ import { AnchorHeading } from "@/components/AnchorHeading";
 
 export const About = () => {
     return (
-        <section className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-3 gap-x-32 mt-26"}>
+        <section className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-3 gap-x-32 py-26"}>
             <AnchorHeading id={"about"} className={"col-span-3"} />
             <div className={"col-span-2"}>
                 <h4 className={"text-xl pb-4 font-semibold"}>{"Hey there, I'm Kateryna! 👋"}</h4>

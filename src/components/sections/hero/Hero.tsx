@@ -5,7 +5,7 @@ import DecryptedText from "@/components/animations/DecryptedText/DecryptedText";
 
 export const Hero = () => {
     return (
-        <section className="min-h-screen pt-16 flex items-center justify-center">
+        <section id="hero" className="min-h-screen pt-16 flex items-center justify-center">
             <div className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16 pt-36"}>
                 <div className={"grid grid-cols-1 lg:grid-cols-3 gap-8 items-center"}>
                     <h1 className={cn(

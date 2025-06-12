@@ -3,7 +3,7 @@ import { AnchorHeading } from "@/components/AnchorHeading";
 
 export const Work = () => {
     return (
-        <section className={"text-white min-h-screen flex justify-center items-center w-full flex-col"}>
+        <section className={"text-white py-26 flex justify-center items-center w-full flex-col"}>
             <div className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"}>
                 <AnchorHeading id={"work"} className="text-right" />
             </div>
