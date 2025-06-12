@@ -1,6 +1,7 @@
 import { cn } from "@/utils/tailwind";
 import { Download } from "lucide-react";
 import CircularText from "@/components/animations/CircularText/CircularText";
+import GlareHover from "@/components/animations/GlareHover/GlareHover";
 
 export const DownloadCVButton = () => {
     return (
@@ -25,21 +26,33 @@ export const DownloadCVButton = () => {
                 onHover="speedUp"
             />
 
-            <a
-                href={"/cv.pdf"}
-                download={"Kateryna_Khremuchkova_CV.pdf"}
-                className={cn(
-                    "flex flex-col items-center justify-center w-22 h-22 rounded-full z-30",
-                    "bg-gradient-to-br from-purple-500 to-blue-500 transition-all duration-300 transform",
-                    "group-hover:scale-102 shadow-lg hover:shadow-xl group"
-                )}
-                aria-label={"Download CV"}
+            <GlareHover
+                style={{
+                    height: 94,
+                    width: 94,
+                    borderRadius: "100%",
+                    zIndex: 30,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "linear-gradient(to bottom right, #8b5cf6, #3b82f6)",
+                    transition: "all 0.3s",
+                }}
+                className={"group"}
             >
-                <Download
-                    className="w-6 h-6 text-white mb-1"
-                    strokeWidth={2}
-                />
-            </a>
+                <a
+                    href={"/cv.pdf"}
+                    download={"Kateryna_Khremuchkova_CV.pdf"}
+                    aria-label={"Download CV"}
+                >
+                    <Download
+                        className="w-6 h-6 text-white mb-1"
+                        strokeWidth={2}
+                    />
+                </a>
+            </GlareHover>
+
         </div>
     );
 }; 

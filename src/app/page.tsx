@@ -1,7 +1,7 @@
 import { Header } from "@/components/header/Header";
 import { Hero } from "@/components/sections/hero/Hero";
 import { Work } from "@/components/sections/work/Work";
-import { DownloadCVButton } from "@/components/header/DownloadCVButton";
+import { DownloadCVButton } from "@/components/DownloadCVButton";
 import { Skills } from "@/components/sections/skills/Skills";
 import { About } from "@/components/sections/about/About";
 
