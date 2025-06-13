@@ -21,7 +21,7 @@ export const event = (
     value?: number
   } = {}
 ) => {
-    if (typeof window !== "undefined" && window.gtag) {
+    if (typeof window !== "undefined" && window.gtag && process.env.NODE_ENV === "production") {
         window.gtag("event", action, {
             event_category,
             event_label,
