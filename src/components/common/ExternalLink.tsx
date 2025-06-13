@@ -1,5 +1,9 @@
-import { cn } from "@/utils/tailwind";
+"use client";
+
 import { ComponentType, FC } from "react";
+import { cn } from "@/utils/tailwind";
+
+import { trackSocialClick } from "@/lib/gtag";
 
 interface ExternalLinkProps {
   href: string
@@ -12,11 +16,16 @@ export const ExternalLink: FC<ExternalLinkProps> = ({
     className,
     icon: Icon
 }) => {
+    const handleClick = () => {
+        trackSocialClick(href);
+    };
+
     return (
         <a
             href={href}
             target={"_blank"}
             rel={"noopener noreferrer"}
+            onClick={handleClick}
             className={cn(
                 "inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group relative",
                 className

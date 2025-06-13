@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
+import GoogleAnalytics from "@/components/common/GoogleAnalytics";
 
 const openSans = Open_Sans({
     variable: "--font-open-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${openSans.variable} ${firaCode.variable} antialiased`}>
+                <GoogleAnalytics />
                 {children}
             </body>
         </html>

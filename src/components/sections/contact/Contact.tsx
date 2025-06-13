@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import { cn } from "@/utils/tailwind";
+import { trackFormSubmit, trackEmailClick } from "@/lib/gtag";
 
 import { AnchorHeading } from "@/components/common/AnchorHeading";
 import { Input } from "@/components/sections/contact/Input";
@@ -49,6 +50,7 @@ export const Contact = () => {
             });
 
             if (response.ok) {
+                trackFormSubmit("contact");
                 setSubmitStatus("success");
                 setFormData({ name: "", email: "", message: "" });
             } else {
@@ -73,9 +75,11 @@ export const Contact = () => {
                     <p>{"Not a fan of forms?"}</p>
                     <p>
                         {"Reach out at "}
-                        <span className={cn("font-semibold cursor-pointer relative after:content-['']",
-                            "after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white",
-                            "after:opacity-0 after:transition-opacity after:duration-300 hover:after:opacity-100")}>
+                        <span 
+                            onClick={trackEmailClick}
+                            className={cn("font-semibold cursor-pointer relative after:content-['']",
+                                "after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white",
+                                "after:opacity-0 after:transition-opacity after:duration-300 hover:after:opacity-100")}>
                             kateryna.khremuchkova@gmail.com
                         </span>
                     </p>

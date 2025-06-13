@@ -2,6 +2,7 @@
 
 import { cn } from "@/utils/tailwind";
 import { useState } from "react";
+import { trackDownloadCV } from "@/lib/gtag";
 
 import CircularText from "@/components/animations/CircularText/CircularText";
 import GlareHover from "@/components/animations/GlareHover/GlareHover";
@@ -29,6 +30,8 @@ export const DownloadCVButton = () => {
             a.click();
             window.URL.revokeObjectURL(url);
             document.body.removeChild(a);
+
+            trackDownloadCV();
 
             setIsLoading(false);
             setShowSuccess(true);

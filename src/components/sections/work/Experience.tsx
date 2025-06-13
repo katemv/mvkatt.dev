@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { Collapsible } from "@/components/common/Collapsible";
 import { cn } from "@/utils/tailwind";
+import { trackWorkExperienceExpand } from "@/lib/gtag";
 
 interface ExperienceProps {
     startDate: string;
@@ -17,6 +18,13 @@ interface ExperienceProps {
 
 export const Experience: FC<ExperienceProps> =  ({ startDate, endDate, tech, companyName, title, location, description }) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = (newState: boolean) => {
+        setIsOpen(newState);
+        if (newState) {
+            trackWorkExperienceExpand(companyName);
+        }
+    };
 
     const triggerContent = (
         <div className={cn(
@@ -104,7 +112,7 @@ export const Experience: FC<ExperienceProps> =  ({ startDate, endDate, tech, com
             <Collapsible
                 trigger={triggerContent}
                 isOpen={isOpen}
-                onToggle={setIsOpen}
+                onToggle={handleToggle}
             >
                 {detailsContent}
             </Collapsible>
