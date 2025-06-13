@@ -1,5 +1,5 @@
-import ProfileCard from "@/components/profileCard/ProfileCard";
-import { AnchorHeading } from "@/components/AnchorHeading";
+import ProfileCard from "@/components/ProfileCard/ProfileCard";
+import { AnchorHeading } from "@/components/common/AnchorHeading";
 
 export const About = () => {
     return (

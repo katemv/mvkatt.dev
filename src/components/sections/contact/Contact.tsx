@@ -3,9 +3,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { cn } from "@/utils/tailwind";
 
-import { AnchorHeading } from "@/components/AnchorHeading";
+import { AnchorHeading } from "@/components/common/AnchorHeading";
 import { Input } from "@/components/sections/contact/Input";
-import { ExternalLink } from "@/components/ExternalLink";
+import { ExternalLink } from "@/components/common/ExternalLink";
 import { Github, Linkedin, Send } from "lucide-react";
 
 export const Contact = () => {

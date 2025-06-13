@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { Collapsible } from "@/components/Collapsible";
+import { Collapsible } from "@/components/common/Collapsible";
 import { cn } from "@/utils/tailwind";
 
 interface ExperienceProps {

@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Github } from "lucide-react";
 
-import { ExternalLink } from "@/components/ExternalLink";
-import { AnchorHeading } from "@/components/AnchorHeading";
+import { ExternalLink } from "@/components/common/ExternalLink";
+import { AnchorHeading } from "@/components/common/AnchorHeading";
 import SpotlightCard from "@/components/animations/SpotlightCard/SpotlightCard";
 
 export const Skills: FC = () => {

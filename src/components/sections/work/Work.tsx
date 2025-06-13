@@ -1,5 +1,5 @@
 import { Experience } from "@/components/sections/work/Experience";
-import { AnchorHeading } from "@/components/AnchorHeading";
+import { AnchorHeading } from "@/components/common/AnchorHeading";
 
 export const Work = () => {
     return (
