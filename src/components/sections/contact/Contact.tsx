@@ -7,6 +7,7 @@ import { AnchorHeading } from "@/components/common/AnchorHeading";
 import { Input } from "@/components/sections/contact/Input";
 import { ExternalLink } from "@/components/common/ExternalLink";
 import { Github, Linkedin, Send } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 export const Contact = () => {
     const [formData, setFormData] = useState({
@@ -81,9 +82,9 @@ export const Contact = () => {
                     {/* todo: copy + toast*/}
 
                     <div className={"flex mt-11"}>
-                        <ExternalLink href={""} icon={Github} />
-                        <ExternalLink href={""} icon={Linkedin} />
-                        <ExternalLink href={""} icon={Send} />
+                        <ExternalLink href={SOCIAL_LINKS.GITHUB} icon={Github} />
+                        <ExternalLink href={SOCIAL_LINKS.LINKEDIN} icon={Linkedin} />
+                        <ExternalLink href={SOCIAL_LINKS.TELEGRAM} icon={Send} />
                     </div>
                 </div>
                 <form onSubmit={handleSubmit} className={"flex flex-col gap-6"}>

@@ -2,6 +2,7 @@ import { cn } from "@/utils/tailwind";
 import { Github, Linkedin, Send } from "lucide-react";
 import { SocialLink } from "@/components/sections/hero/SocialLink";
 import DecryptedText from "@/components/animations/DecryptedText/DecryptedText";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 export const Hero = () => {
     return (
@@ -66,9 +67,9 @@ export const Hero = () => {
                         />
                     </h2>
                     <div className={"flex flex-wrap gap-4 col-span-3 items-center justify-center mt-16"}>
-                        <SocialLink icon={Github} label="Github" />
-                        <SocialLink icon={Linkedin} label="LinkedIn" />
-                        <SocialLink icon={Send} label="Telegram" />
+                        <SocialLink href={SOCIAL_LINKS.GITHUB} icon={Github} label="Github" />
+                        <SocialLink href={SOCIAL_LINKS.LINKEDIN} icon={Linkedin} label="LinkedIn" />
+                        <SocialLink href={SOCIAL_LINKS.TELEGRAM} icon={Send} label="Telegram" />
                     </div>
                 </div>
             </div>

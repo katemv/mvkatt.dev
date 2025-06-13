@@ -4,6 +4,7 @@ import { Github } from "lucide-react";
 import { ExternalLink } from "@/components/common/ExternalLink";
 import { AnchorHeading } from "@/components/common/AnchorHeading";
 import SpotlightCard from "@/components/animations/SpotlightCard/SpotlightCard";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 export const Skills: FC = () => {
     return (
@@ -30,7 +31,7 @@ export const Skills: FC = () => {
                 </SpotlightCard>
 
                 <div className={"flex justify-center"}>
-                    <ExternalLink href="https://github.com/katemv" icon={Github}/>
+                    <ExternalLink href={SOCIAL_LINKS.GITHUB} icon={Github}/>
                 </div>
 
                 <SpotlightCard className={"col-span-2"} spotlightColor="rgba(53, 60, 90, 0.6)">
