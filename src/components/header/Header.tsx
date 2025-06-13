@@ -8,7 +8,6 @@ const navItems = [
     "about",
     "work",
     "skills",
-    "projects",
     "contact"
 ];
 
