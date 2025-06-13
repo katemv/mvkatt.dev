@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/tailwind";
 import { Github, Linkedin, Send } from "lucide-react";
 import { SocialLink } from "@/components/sections/hero/SocialLink";

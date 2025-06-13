@@ -46,7 +46,7 @@ function GoogleAnalyticsInner() {
 
 export default function GoogleAnalyticsWrapper() {
     return (
-        <Suspense fallback={null}>
+        <Suspense>
             <GoogleAnalyticsInner />
         </Suspense>
     );
