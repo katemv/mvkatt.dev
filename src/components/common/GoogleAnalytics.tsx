@@ -10,13 +10,13 @@ function GoogleAnalyticsInner() {
     const searchParams = useSearchParams();
 
     useEffect(() => {
-        if (!GA_TRACKING_ID) return;
+        if (!GA_TRACKING_ID || process.env.NODE_ENV !== 'production') return;
 
         const url = pathname + searchParams.toString();
         pageview(url);
     }, [pathname, searchParams]);
 
-    if (!GA_TRACKING_ID) {
+    if (!GA_TRACKING_ID || process.env.NODE_ENV !== 'production') {
         return null;
     }
 
