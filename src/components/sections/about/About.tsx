@@ -20,12 +20,6 @@ export const About = () => {
                     a firm believer that great code isn&#39;t just functional—it&#39;s clean, optimized, and built to
                     scale.
                 </p>
-                <p className={"pb-4 leading-8 text-justify"}>
-                    {"I'm the kind of tech geek who gets a kick out of solving a gnarly bug or discovering a new library that changes the game. But I'm not just about the code — I love the camaraderie of a team, where we swap insights, debate architecture, and celebrate those \"aha!\" moments together. Staying on top of industry trends keeps me sharp, whether it's diving into the latest React hooks or nerding out over performance tweaks that shave milliseconds off a render."}
-                </p>
-                <p className={"pb-4 leading-8 text-justify"}>
-                    {"For me, software development is equal parts art and science — a chance to blend creativity with precision. I'm driven by the challenge of building applications that users love and solutions that make developers nod in approval. Let's build something that's as delightful to use as it was to create."}
-                </p>
             </div>
             <div className={"flex items-center justify-center"}>
                 <ProfileCard

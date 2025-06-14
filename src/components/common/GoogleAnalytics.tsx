@@ -10,13 +10,13 @@ function GoogleAnalyticsInner() {
     const searchParams = useSearchParams();
 
     useEffect(() => {
-        if (!GA_TRACKING_ID || process.env.NODE_ENV !== 'production') return;
+        if (!GA_TRACKING_ID || process.env.NODE_ENV !== "production") return;
 
         const url = pathname + searchParams.toString();
         pageview(url);
     }, [pathname, searchParams]);
 
-    if (!GA_TRACKING_ID || process.env.NODE_ENV !== 'production') {
+    if (!GA_TRACKING_ID || process.env.NODE_ENV !== "production") {
         return null;
     }
 
@@ -31,13 +31,13 @@ function GoogleAnalyticsInner() {
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
                     __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                    });
+                `,
                 }}
             />
         </>

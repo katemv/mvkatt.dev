@@ -1,42 +1,49 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useState } from "react";
-import { cn } from "@/utils/tailwind";
+import { useState } from "react";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { trackFormSubmit, trackEmailClick } from "@/lib/gtag";
+import { Github, Linkedin, Send } from "lucide-react";
+import { cn } from "@/utils/tailwind";
+import { z } from "zod";
 
 import { AnchorHeading } from "@/components/common/AnchorHeading";
 import { Input } from "@/components/sections/contact/Input";
 import { ExternalLink } from "@/components/common/ExternalLink";
-import { Github, Linkedin, Send } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
+export const contactFormSchema = z.object({
+    name: z
+        .string()
+        .min(1, "Please enter your name"),
+    email: z
+        .string()
+        .min(1, "Please enter your email")
+        .email("Please enter a valid email address"),
+    message: z
+        .string()
+        .min(1, "Please enter your message"),
+});
+
+export type ContactFormData = z.infer<typeof contactFormSchema>
+
 export const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: ""
-    });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
+    const form = useForm<ContactFormData>({
+        resolver: zodResolver(contactFormSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            message: ""
+        },
+        mode: "onSubmit",
+        reValidateMode: "onChange"
+    });
 
-    const handleTextareaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
+    const onSubmit = async (data: ContactFormData) => {
         setIsSubmitting(true);
         setSubmitStatus("idle");
 
@@ -46,13 +53,13 @@ export const Contact = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(data),
             });
 
             if (response.ok) {
                 trackFormSubmit("contact");
                 setSubmitStatus("success");
-                setFormData({ name: "", email: "", message: "" });
+                form.reset();
             } else {
                 setSubmitStatus("error");
             }
@@ -91,75 +98,75 @@ export const Contact = () => {
                         <ExternalLink href={SOCIAL_LINKS.TELEGRAM} icon={Send} />
                     </div>
                 </div>
-                <form onSubmit={handleSubmit} className={"flex flex-col gap-6"}>
-                    {submitStatus === "success" && (
-                        <div className={"p-4 bg-green-50 border border-green-200 rounded-lg"}>
-                            <p className={"text-green-800 text-sm"}>
-                                {"✅ Message sent successfully! I'll get back to you soon."}
-                            </p>
-                        </div>
-                    )}
-
-                    {submitStatus === "error" && (
-                        <div className={"p-4 bg-red-50 border border-red-200 rounded-lg"}>
-                            <p className={"text-red-800 text-sm"}>
-                                {"❌ Failed to send message. Please try again."}
-                            </p>
-                        </div>
-                    )}
-
-                    <Input
-                        label={"Name"}
-                        type={"text"}
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                    />
-
-                    <Input
-                        label={"Email"}
-                        type={"email"}
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                    />
-
-                    <div className={"flex flex-col gap-2"}>
-                        <label htmlFor="message" className={"text-base font-mono font-medium text-white"}>
-                            {"Message"}
-                        </label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleTextareaChange}
-                            required
-                            rows={5}
-                            className={cn(
-                                "px-4 py-3 border-b border-white resize-vertical",
-                                "focus:ring-2 focus:ring-blue-500 focus:border-transparent",
-                                "transition-colors duration-200"
-                            )}
-                        />
-                    </div>
-
-                    <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className={cn(
-                            "bg-white text-black/80 hover:text-black font-medium py-3 px-6 rounded-md",
-                            "focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-bold",
-                            "transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed",
-                            "cursor-pointer mt-6 h-14"
+                
+                <FormProvider {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className={"flex flex-col gap-6"}>
+                        {submitStatus === "success" && (
+                            <div className={"p-4 bg-green-50 border border-green-200 rounded-lg"}>
+                                <p className={"text-green-800 text-sm"}>
+                                    {"✅ Message sent successfully! I'll get back to you soon."}
+                                </p>
+                            </div>
                         )}
-                    >
-                        {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
-                </form>
+
+                        {submitStatus === "error" && (
+                            <div className={"p-4 bg-red-50 border border-red-200 rounded-lg"}>
+                                <p className={"text-red-800 text-sm"}>
+                                    {"❌ Failed to send message. Please try again."}
+                                </p>
+                            </div>
+                        )}
+
+                        <Input
+                            label={"Name"}
+                            type={"text"}
+                            id="name"
+                            {...form.register("name")}
+                        />
+
+                        <Input
+                            label={"Email"}
+                            type={"email"}
+                            id="email"
+                            {...form.register("email")}
+                        />
+
+                        <div className={"flex flex-col gap-2"}>
+                            <label htmlFor="message" className={"text-base font-mono font-medium text-white"}>
+                                {"Message"}
+                            </label>
+                            <textarea
+                                id="message"
+                                rows={5}
+                                {...form.register("message")}
+                                className={cn(
+                                    "px-4 py-3 border-b border-white resize-vertical",
+                                    "focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+                                    "transition-colors duration-200",
+                                    form.formState.errors.message?.message && "border-red-500 focus:ring-red-500"
+                                )}
+                            />
+                            {form.formState.errors.message && (
+                                <p className={"text-red-400 text-sm font-mono"}>
+                                    {form.formState.errors.message?.message}
+                                </p>
+                            )}
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className={cn(
+                                "bg-white text-black/80 hover:text-black font-medium py-3 px-6 rounded-md",
+                                "focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-bold",
+                                "transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed",
+                                "cursor-pointer mt-6 h-14"
+                            )}
+                        >
+                            {isSubmitting ? "Sending..." : "Send Message"}
+                        </button>
+                    </form>
+                </FormProvider>
             </div>
         </section>
     );
