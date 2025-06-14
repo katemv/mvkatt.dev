@@ -6,6 +6,11 @@ const SCOPES = ["https://www.googleapis.com/auth/drive.readonly"];
 export async function GET() {
     try {
         const fileId = process.env.GOOGLE_DRIVE_CV_FILE_ID;
+        const projectId = process.env.GOOGLE_PROJECT_ID;
+        const privateKeyId = process.env.GOOGLE_PRIVATE_KEY_ID;
+        const privateKey = process.env.GOOGLE_PRIVATE_KEY;
+        const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+        const clientId = process.env.GOOGLE_CLIENT_ID;
     
         if (!fileId) {
             return NextResponse.json(
@@ -14,14 +19,21 @@ export async function GET() {
             );
         }
 
+        if (!projectId || !privateKeyId || !privateKey || !clientEmail || !clientId) {
+            return NextResponse.json(
+                { error: "Google credentials not properly configured" },
+                { status: 500 }
+            );
+        }
+
         const auth = new google.auth.GoogleAuth({
             credentials: {
                 type: "service_account",
-                project_id: process.env.GOOGLE_PROJECT_ID,
-                private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
-                private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-                client_email: process.env.GOOGLE_CLIENT_EMAIL,
-                client_id: process.env.GOOGLE_CLIENT_ID
+                project_id: projectId,
+                private_key_id: privateKeyId,
+                private_key: Buffer.from(privateKey, "base64").toString("utf8"),
+                client_email: clientEmail,
+                client_id: clientId
             },
             scopes: SCOPES,
         });
