@@ -8,7 +8,7 @@ export async function GET() {
         const fileId = process.env.GOOGLE_DRIVE_CV_FILE_ID;
         const projectId = process.env.GOOGLE_PROJECT_ID;
         const privateKeyId = process.env.GOOGLE_PRIVATE_KEY_ID;
-        const privateKey = process.env.GOOGLE_PRIVATE_KEY;
+        const privateKey = process.env.GOOGLE_PRIVATE_KEY_BASE_64;
         const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
         const clientId = process.env.GOOGLE_CLIENT_ID;
     
