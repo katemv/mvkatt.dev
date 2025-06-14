@@ -7,6 +7,7 @@ import { trackFormSubmit, trackEmailClick } from "@/lib/gtag";
 import { Github, Linkedin, Send } from "lucide-react";
 import { cn } from "@/utils/tailwind";
 import { z } from "zod";
+import { toast } from "sonner";
 
 import { AnchorHeading } from "@/components/common/AnchorHeading";
 import { Input } from "@/components/sections/contact/Input";
@@ -30,7 +31,6 @@ export type ContactFormData = z.infer<typeof contactFormSchema>
 
 export const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
     const form = useForm<ContactFormData>({
         resolver: zodResolver(contactFormSchema),
@@ -45,7 +45,6 @@ export const Contact = () => {
 
     const onSubmit = async (data: ContactFormData) => {
         setIsSubmitting(true);
-        setSubmitStatus("idle");
 
         try {
             const response = await fetch("/api/contact", {
@@ -58,14 +57,20 @@ export const Contact = () => {
 
             if (response.ok) {
                 trackFormSubmit("contact");
-                setSubmitStatus("success");
+                toast.success("Message sent successfully! I'll get back to you soon.", {
+                    richColors: true
+                });
                 form.reset();
             } else {
-                setSubmitStatus("error");
+                toast.error("Failed to send message. Please try again later.", {
+                    richColors: true
+                });
             }
         } catch (error) {
             console.error("Error submitting form:", error);
-            setSubmitStatus("error");
+            toast.error("Failed to send message. Please try again later.", {
+                richColors: true
+            });
         } finally {
             setIsSubmitting(false);
         }
@@ -101,21 +106,6 @@ export const Contact = () => {
                 
                 <FormProvider {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className={"flex flex-col gap-6"}>
-                        {submitStatus === "success" && (
-                            <div className={"p-4 bg-green-50 border border-green-200 rounded-lg"}>
-                                <p className={"text-green-800 text-sm"}>
-                                    {"✅ Message sent successfully! I'll get back to you soon."}
-                                </p>
-                            </div>
-                        )}
-
-                        {submitStatus === "error" && (
-                            <div className={"p-4 bg-red-50 border border-red-200 rounded-lg"}>
-                                <p className={"text-red-800 text-sm"}>
-                                    {"❌ Failed to send message. Please try again."}
-                                </p>
-                            </div>
-                        )}
 
                         <Input
                             label={"Name"}
