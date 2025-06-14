@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import { google } from "googleapis";
-import path from "path";
-import fs from "fs";
 
 const SCOPES = ["https://www.googleapis.com/auth/drive.readonly"];
 
@@ -12,14 +10,6 @@ export async function GET() {
         if (!fileId) {
             return NextResponse.json(
                 { error: "CV file ID not configured" },
-                { status: 500 }
-            );
-        }
-
-        const credentialsPath = path.join(process.cwd(), "credentials.json");
-        if (!fs.existsSync(credentialsPath)) {
-            return NextResponse.json(
-                { error: "Google credentials file not found" },
                 { status: 500 }
             );
         }
