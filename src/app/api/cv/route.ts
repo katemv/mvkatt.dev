@@ -6,27 +6,27 @@ const SCOPES = ["https://www.googleapis.com/auth/drive.readonly"];
 // Fix private key format for Vercel compatibility
 function fixPrivateKeyFormat(privateKey: string): string {
     // Remove any quotes and extra whitespace
-    let key = privateKey.trim().replace(/^["']|["']$/g, '');
+    let key = privateKey.trim().replace(/^["']|["']$/g, "");
     
     // If it's base64 encoded, decode it first
-    if (!key.includes('-----BEGIN')) {
+    if (!key.includes("-----BEGIN")) {
         try {
-            key = Buffer.from(key, 'base64').toString('utf8');
+            key = Buffer.from(key, "base64").toString("utf8");
         } catch (error) {
-            console.error('Failed to decode base64 private key:', error);
-            throw new Error('Invalid base64 private key');
+            console.error("Failed to decode base64 private key:", error);
+            throw new Error("Invalid base64 private key");
         }
     }
     
     // Ensure proper line breaks
-    key = key.replace(/\\n/g, '\n');
+    key = key.replace(/\\n/g, "\n");
     
     // Ensure it starts and ends with proper markers
-    if (!key.includes('-----BEGIN PRIVATE KEY-----')) {
-        throw new Error('Private key missing BEGIN marker');
+    if (!key.includes("-----BEGIN PRIVATE KEY-----")) {
+        throw new Error("Private key missing BEGIN marker");
     }
-    if (!key.includes('-----END PRIVATE KEY-----')) {
-        throw new Error('Private key missing END marker');
+    if (!key.includes("-----END PRIVATE KEY-----")) {
+        throw new Error("Private key missing END marker");
     }
     
     return key;
