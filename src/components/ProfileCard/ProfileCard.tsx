@@ -19,7 +19,6 @@ interface ProfileCardProps {
   status?: string;
   contactText?: string;
   showUserInfo?: boolean;
-  onContactClick?: () => void;
 }
 
 const DEFAULT_BEHIND_GRADIENT =
@@ -69,7 +68,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     status = "Online",
     contactText = "Contact",
     showUserInfo = true,
-    onContactClick,
 }) => {
     const wrapRef = useRef<HTMLDivElement>(null);
     const cardRef = useRef<HTMLDivElement>(null);
@@ -255,10 +253,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       }) as React.CSSProperties,
         [iconUrl, grainUrl, showBehindGradient, behindGradient, innerGradient],
     );
-
-    const handleContactClick = useCallback(() => {
-        onContactClick?.();
-    }, [onContactClick]);
 
     return (
         <div className={"relative flex"}>
