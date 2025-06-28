@@ -302,15 +302,14 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                                             <div className="pc-status">{status}</div>
                                         </div>
                                     </div>
-                                    <button
+                                    <a
                                         className="pc-contact-btn"
-                                        onClick={handleContactClick}
+                                        href={"#contact"}
                                         style={{ pointerEvents: "auto" }}
-                                        type="button"
                                         aria-label={`Contact ${name || "user"}`}
                                     >
                                         {contactText}
-                                    </button>
+                                    </a>
                                 </div>
                             )}
                         </div>
