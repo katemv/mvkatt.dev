@@ -43,6 +43,17 @@ export const Contact = () => {
         reValidateMode: "onChange"
     });
 
+    const copyEmailToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText("kateryna.khremuchkova@gmail.com");
+            toast.success("Email copied to clipboard!");
+            trackEmailClick();
+        } catch (error) {
+            console.error("Failed to copy email:", error);
+            toast.error("Failed to copy email. Please try again.");
+        }
+    };
+
     const onSubmit = async (data: ContactFormData) => {
         setIsSubmitting(true);
 
@@ -57,20 +68,14 @@ export const Contact = () => {
 
             if (response.ok) {
                 trackFormSubmit("contact");
-                toast.success("Message sent successfully! I'll get back to you soon.", {
-                    richColors: true
-                });
+                toast.success("Message sent successfully! I'll get back to you soon.");
                 form.reset();
             } else {
-                toast.error("Failed to send message. Please try again later.", {
-                    richColors: true
-                });
+                toast.error("Failed to send message. Please try again later.");
             }
         } catch (error) {
             console.error("Error submitting form:", error);
-            toast.error("Failed to send message. Please try again later.", {
-                richColors: true
-            });
+            toast.error("Failed to send message. Please try again later.");
         } finally {
             setIsSubmitting(false);
         }
@@ -81,21 +86,20 @@ export const Contact = () => {
             <AnchorHeading id="contact" className={"text-right"} />
 
             <div className={"grid grid-cols-2"}>
-                <div className={"flex justify-end flex-col"}>
+                <div className={"flex justify-end flex-col col-span-2 md:col-span-1 order-2 md:order-1"}>
                     <p className={"font-semibold text-2xl"}>Kateryna Khremuchkova</p>
                     <p className={"text-lg mb-4"}>Full-stack Developer</p>
                     <p>{"Not a fan of forms?"}</p>
                     <p>
                         {"Reach out at "}
                         <span 
-                            onClick={trackEmailClick}
+                            onClick={copyEmailToClipboard}
                             className={cn("font-semibold cursor-pointer relative after:content-['']",
                                 "after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white",
                                 "after:opacity-0 after:transition-opacity after:duration-300 hover:after:opacity-100")}>
                             kateryna.khremuchkova@gmail.com
                         </span>
                     </p>
-                    {/* todo: copy + toast*/}
 
                     <div className={"flex mt-11"}>
                         <ExternalLink href={SOCIAL_LINKS.GITHUB} icon={Github} />
@@ -105,7 +109,7 @@ export const Contact = () => {
                 </div>
                 
                 <FormProvider {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className={"flex flex-col gap-6"}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className={"order-1 md:order-2 col-span-2 md:col-span-1 flex flex-col gap-6 mb-12 md:mb-0"}>
 
                         <Input
                             label={"Name"}

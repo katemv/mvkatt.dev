@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-open-sans);
   --font-mono: var(--font-fira-code);
+  --breakpoint-xs: 29.6875rem;
 }
 
 @media (prefers-color-scheme: dark) {

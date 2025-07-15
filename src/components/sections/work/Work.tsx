@@ -25,7 +25,7 @@ export const Work = () => {
 
                 <Experience
                     startDate={"2022"}
-                    endDate={"2023"}
+                    endDate={"2024"}
                     companyName={"PrimaryBid"}
                     title={"Fullstack Developer"}
                     tech={"React, Next & Node, Express"}

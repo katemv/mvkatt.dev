@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/utils/tailwind";
-import { Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const navItems = [
@@ -58,16 +57,6 @@ export const Header = () => {
                 </nav>
 
                 <div className="w-32 hidden md:block" />
-
-                <div className={"md:hidden flex items-center gap-4"}>
-                    <button
-                        className={cn("p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800",
-                            "transition-colors duration-200")}
-                        aria-label={"Open menu"}
-                    >
-                        <Menu className={"w-6 h-6"} />
-                    </button>
-                </div>
             </div>
         </header>
     );
