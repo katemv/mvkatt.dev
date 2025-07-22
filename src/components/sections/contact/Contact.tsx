@@ -151,9 +151,9 @@ export const Contact = () => {
                             type="submit"
                             disabled={isSubmitting}
                             className={cn(
-                                "bg-white text-black/80 hover:text-black font-medium py-3 px-6 rounded-md",
+                                "bg-gradient-purple-blue text-white hover:opacity-90 font-medium py-3 px-6 rounded-md",
                                 "focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-bold",
-                                "transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed",
+                                "transition-opacity duration-200 disabled:opacity-50 disabled:cursor-not-allowed",
                                 "cursor-pointer mt-6 h-14"
                             )}
                         >

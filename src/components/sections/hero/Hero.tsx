@@ -62,14 +62,14 @@ export const Hero = () => {
                         )}
                     >
                         <div
-                            className={"bg-white text-black px-8 py-3 rounded-full hover:bg-gray-100 transition-colors"}>
+                            className={"bg-gradient-purple-blue text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity"}>
                             <span className={"font-medium"}>
                                 {"Discover my story"}
                             </span>
                         </div>
                         <div className={cn(
-                            "bg-white text-black w-12 h-12 rounded-full flex items-center justify-center",
-                            "hover:bg-gray-100 transition-colors"
+                            "bg-gradient-purple-blue text-white w-12 h-12 rounded-full flex items-center justify-center",
+                            "hover:opacity-90 transition-opacity"
                         )}>
                             <span
                                 className={"text-xl transition-transform duration-300 rotate-45 group-hover:rotate-135"}>

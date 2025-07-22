@@ -309,7 +309,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         </div>
                         <div className="pc-content">
                             <div className="absolute pc-details">
-                                <h3 className={"leading-tight !text-2xl absolute -top-5 left-1/2 -translate-x-1/2"}>
+                                <h3 className={"leading-tight !text-xl md:!text-2xl absolute -top-5 left-1/2 -translate-x-1/2"}>
                                     {name}
                                 </h3>
                                 <p className={"!absolute !text-sm !top-2 left-1/2 -translate-x-1/2"}>

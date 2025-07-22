@@ -35,7 +35,7 @@ export const ExternalLink: FC<ExternalLinkProps> = ({
                 <Icon size={20} className={"text-white"} />
             </div>
 
-            <div className={cn("-translate-x-6 bg-white text-black size-14 rounded-full flex items-center",
+            <div className={cn("-translate-x-6 bg-gradient-purple-blue text-white size-14 rounded-full flex items-center",
                 "justify-center group-hover:-translate-x-4 transition-transform duration-300")}>
                 <span className={"text-xl transition-transform duration-300 group-hover:rotate-45"}>
                     {"↗"}
