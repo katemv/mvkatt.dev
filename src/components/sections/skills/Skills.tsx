@@ -23,11 +23,11 @@ export const Skills: FC = () => {
             <section className={"grid grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-10 py-26"}>
                 <AnchorHeading id="skills" className={"col-span-3"}/>
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-y-6 col-span-3 md:col-span-2 font-mono"}>
-                    <SpotlightCard className={"col-span-2 bg-white"}>
+                    <SpotlightCard className={"col-span-2 bg-white/90"}>
                         <h3 className={"text-lg font-semibold text-gray-900 mb-4"}>
                         Front-end
                         </h3>
-                        <p className={"text-gray-600 text-base leading-relaxed font-semibold"}>
+                        <p className={"text-gray-800 text-base leading-relaxed font-semibold"}>
                         React / React Native / JavaScript / TypeScript <br/>
                         NextJS / Redux Toolkit / Context API <br/>
                         GraphQL / Playwright / Jest
@@ -45,7 +45,7 @@ export const Skills: FC = () => {
                     </SpotlightCard>
 
                     <div className={"justify-center hidden md:flex"}>
-                        <ExternalLink href={SOCIAL_LINKS.GITHUB} icon={Github}/>
+                        <ExternalLink href={SOCIAL_LINKS.GITHUB} icon={Github} color />
                     </div>
 
                     <SpotlightCard className={"col-span-2"} spotlightColor="rgba(53, 60, 90, 0.6)">

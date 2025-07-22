@@ -134,7 +134,7 @@ export const Contact = () => {
                                 rows={5}
                                 {...form.register("message")}
                                 className={cn(
-                                    "px-4 py-3 border-b border-white resize-vertical",
+                                    "px-4 py-3 border border-white/50 rounded-lg resize-vertical",
                                     "focus:ring-2 focus:ring-blue-500 focus:border-transparent",
                                     "transition-colors duration-200",
                                     form.formState.errors.message?.message && "border-red-500 focus:ring-red-500"
