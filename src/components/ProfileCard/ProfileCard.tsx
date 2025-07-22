@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
+import Image from "next/image";
 import "./ProfileCard.css";
 
 interface ProfileCardProps {
@@ -266,10 +267,12 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         <div className="pc-shine" />
                         <div className="pc-glare" />
                         <div className="pc-content pc-avatar-content">
-                            <img
+                            <Image
                                 className="avatar"
                                 src={avatarUrl}
                                 alt={`${name || "User"} avatar`}
+                                width={200}
+                                height={200}
                                 loading="lazy"
                                 onError={(e) => {
                                     const target = e.target as HTMLImageElement;
@@ -280,9 +283,11 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                                 <div className="pc-user-info">
                                     <div className="pc-user-details">
                                         <div className="pc-mini-avatar">
-                                            <img
+                                            <Image
                                                 src={miniAvatarUrl || avatarUrl}
                                                 alt={`${name || "User"} mini avatar`}
+                                                width={40}
+                                                height={40}
                                                 loading="lazy"
                                                 onError={(e) => {
                                                     const target = e.target as HTMLImageElement;
