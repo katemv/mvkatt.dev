@@ -62,7 +62,7 @@ export const Hero = () => {
                         )}
                     >
                         <div
-                            className={"bg-gradient-purple-blue text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity"}>
+                            className={"border-white/50 border text-white px-8 py-3 rounded-full hover:border-white/70 transition-all"}>
                             <span className={"font-medium"}>
                                 {"Discover my story"}
                             </span>
