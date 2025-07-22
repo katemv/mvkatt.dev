@@ -103,9 +103,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <head>
-                <link rel="image_src" href="https://mvkatt.dev/og-image.png" />
-            </head>
             <body className={`${openSans.variable} ${firaCode.variable} antialiased`}>
                 <GoogleAnalytics />
                 <ParallaxWrapper>
