@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/og-image.jpg", // We'll create this
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Kateryna Khremuchkova - Full-Stack Developer Portfolio",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Kateryna Khremuchkova | Full-Stack Developer Portfolio",
         description: "Experienced full-stack developer specializing in modern web technologies. Explore my projects, skills, and get in touch for collaboration opportunities.",
-        images: ["/og-image.jpg"], // We'll create this
+        images: ["/og-image.png"],
         creator: "@kateryna30715",
     },
     robots: {
