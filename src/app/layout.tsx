@@ -45,10 +45,11 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/og-image.png",
+                url: "https://mvkatt.dev/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Kateryna Khremuchkova - Full-Stack Developer Portfolio",
+                type: "image/png",
             }
         ],
     },
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Kateryna Khremuchkova | Full-Stack Developer Portfolio",
         description: "Experienced full-stack developer specializing in modern web technologies. Explore my projects, skills, and get in touch for collaboration opportunities.",
-        images: ["/og-image.png"],
+        images: ["https://mvkatt.dev/og-image.png"],
         creator: "@kateryna30715",
     },
     robots: {
@@ -70,6 +71,29 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
+    other: {
+        "linkedin:owner": "mvkatt",
+        "linkedin:title": "Kateryna Khremuchkova | Full-Stack Developer Portfolio",
+        "linkedin:description": "Experienced full-stack developer specializing in modern web technologies. Explore my projects, skills, and get in touch for collaboration opportunities.",
+        "linkedin:image": "https://mvkatt.dev/og-image.png",
+        
+        "og:image:secure_url": "https://mvkatt.dev/og-image.png",
+        "og:image:type": "image/png",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:image:alt": "Kateryna Khremuchkova - Full-Stack Developer Portfolio",
+        
+        "og:image:url": "https://mvkatt.dev/og-image.png",
+        "twitter:image:src": "https://mvkatt.dev/og-image.png",
+        "twitter:image": "https://mvkatt.dev/og-image.png",
+        
+        "article:author": "Kateryna Khremuchkova",
+        "article:publisher": "https://mvkatt.dev",
+        
+        "fb:app_id": "",
+        "twitter:site": "@kateryna30715",
+        "twitter:creator": "@kateryna30715",
+    }
 };
 
 export default function RootLayout({
@@ -79,6 +103,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <link rel="image_src" href="https://mvkatt.dev/og-image.png" />
+            </head>
             <body className={`${openSans.variable} ${firaCode.variable} antialiased`}>
                 <GoogleAnalytics />
                 <ParallaxWrapper>
