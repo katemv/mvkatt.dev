@@ -50,7 +50,7 @@ export const DownloadCVButton = () => {
     };
 
     return (
-        <div className={"fixed -top-6 md:-top-10 right-8 md:right-16 h-28 w-28 md:h-36 md:w-36 flex items-center justify-center group z-55 cursor-pointer"}>
+        <div className={"fixed -top-8 md:-top-10 -right-8 md:right-16 h-28 w-28 md:h-36 md:w-36 flex items-center justify-center group z-55 cursor-pointer"}>
             {/* Outer circle */}
             <div className={cn(
                 "absolute inset-0 size-36 md:size-46 rounded-full border border-white/20 z-0 transform",

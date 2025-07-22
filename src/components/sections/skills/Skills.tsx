@@ -13,7 +13,7 @@ import Threads from "@/components/animations/Threads/Threads";
 export const Skills: FC = () => {
     return (
         <div className={"relative"}>
-            <Parallax speed={-40} className={"absolute w-full h-[600px] top-96 -z-[1]"}>
+            <Parallax speed={-40} className={"hidden md:block absolute w-full h-[600px] top-96 -z-[1]"}>
                 <Threads
                     amplitude={1}
                     distance={0}
@@ -22,7 +22,7 @@ export const Skills: FC = () => {
             </Parallax>
             <section className={"grid grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full gap-10 py-26"}>
                 <AnchorHeading id="skills" className={"col-span-3"}/>
-                <div className={"grid grid-cols-1 md:grid-cols-2 gap-6 col-span-3 md:col-span-2 font-mono"}>
+                <div className={"grid grid-cols-1 md:grid-cols-2 gap-y-6 col-span-3 md:col-span-2 font-mono"}>
                     <SpotlightCard className={"col-span-2 bg-white"}>
                         <h3 className={"text-lg font-semibold text-gray-900 mb-4"}>
                         Front-end
