@@ -24,7 +24,7 @@ export const About = () => {
                     />
                 </div>
                 
-                <FadeInOnScroll className={"order-2 md:order-2"} delay={400}>
+                <FadeInOnScroll className={"order-2 md:order-2"} delay={200}>
                     <p className={"pb-4 leading-8 text-justify"}>
                         I&#39;m a Software Engineer who specializes in creating impactful digital experiences. My core stack
                         includes
