@@ -94,9 +94,7 @@ export const Contact = () => {
                         {"Reach out at "}
                         <span 
                             onClick={copyEmailToClipboard}
-                            className={cn("font-semibold cursor-pointer relative after:content-['']",
-                                "after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white",
-                                "after:opacity-0 after:transition-opacity after:duration-300 hover:after:opacity-100")}>
+                            className={cn("font-semibold cursor-pointer relative text-gradient-purple-blue",)}>
                             kateryna.khremuchkova@gmail.com
                         </span>
                     </p>

@@ -9,7 +9,7 @@ export const About = () => {
         <section className={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-26"}>
             <AnchorHeading id={"about"} className={"w-full mb-8"} />
             <div className={"grid grid-cols-1 md:grid-cols-2 gap-8"}>
-                <FadeInOnScroll className={"order-1"} delay={100}>
+                <FadeInOnScroll className={"order-1"}>
                     <h4 className={"text-xl font-semibold font-mono"}>{"Hey there, I'm Kateryna! 👋"}</h4>
                 </FadeInOnScroll>
                 
@@ -24,7 +24,7 @@ export const About = () => {
                     />
                 </div>
                 
-                <FadeInOnScroll className={"order-2 md:order-2"} delay={200}>
+                <FadeInOnScroll className={"order-2 md:order-2"}>
                     <p className={"pb-4 leading-8 text-justify"}>
                         I&#39;m a Software Engineer who specializes in creating impactful digital experiences. My core stack
                         includes
